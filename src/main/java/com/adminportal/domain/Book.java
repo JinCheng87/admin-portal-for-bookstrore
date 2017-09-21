@@ -11,16 +11,17 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Book {
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String title;
 	private String author;
-	private String publish;
+	private String publisher;
 	private String publicationDate;
 	private String language;
 	private String category;
-	private int numberOfPage;
+	private int numberOfPages;
 	private String format;
 	private int isbn;
 	private double shippingWeight;
