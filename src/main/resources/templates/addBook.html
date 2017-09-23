@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head th:replace="common/header :: common-header" />
-
+ <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
 <body>
 	<div th:replace="common/header :: navbar" />
 
@@ -127,7 +128,7 @@
 							Weight</label>
 						<div class="col-md-8">
 							<div class="input-group">
-								<input type="number" class="form-control" id="shippingWeight"
+								<input type="number" class="form-control" id="shippingWeight" step="0.01"
 									placeholder="Shipping Weight" th:value="${book.shippingWeight}"
 									name="shippingWeight" /> <span class="input-group-addon">Ounces</span>
 							</div>
@@ -140,7 +141,7 @@
 							Price</label>
 						<div class="col-md-8">
 							<div class="input-group">
-								<span class="input-group-addon">$</span> <input type="number"
+								<span class="input-group-addon">$</span> <input type="number" step="0.01"
 									class="form-control" id="listPrice" placeholder="List Price"
 									th:value="${book.listPrice}" name="listPrice" />
 							</div>
@@ -153,7 +154,7 @@
 							Price</label>
 						<div class="col-md-8">
 							<div class="input-group">
-								<span class="input-group-addon">$</span> <input type="number"
+								<span class="input-group-addon">$</span> <input type="number" step="0.01"
 									class="form-control" id="ourPrice" placeholder="Our Price"
 									th:value="${book.ourPrice}" name="ourPrice" />
 							</div>
