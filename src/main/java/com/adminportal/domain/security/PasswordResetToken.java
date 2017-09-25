@@ -12,9 +12,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import com.adminportal.domain.User;
+
 @Entity
 public class PasswordResetToken {
-	private static final int  EXPIRATION = 60 * 24;
+
+	private static final int EXPIRATION = 60 * 24;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,14 +30,14 @@ public class PasswordResetToken {
 	
 	private Date expiryDate;
 	
-	public PasswordResetToken() {}
+	public PasswordResetToken(){}
 	
 	public PasswordResetToken(final String token, final User user) {
-		super();
+		super ();
 		
 		this.token = token;
 		this.user = user;
-		this.expiryDate = calculateExpiryDate(EXPIRATION);	
+		this.expiryDate = calculateExpiryDate(EXPIRATION);
 	}
 	
 	private Date calculateExpiryDate (final int expiryTimeInMinutes) {
@@ -91,7 +93,6 @@ public class PasswordResetToken {
 		return "PasswordResetToken [id=" + id + ", token=" + token + ", user=" + user + ", expiryDate=" + expiryDate
 				+ "]";
 	}
-	
 	
 	
 }
